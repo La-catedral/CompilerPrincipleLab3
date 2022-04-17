@@ -1,0 +1,82 @@
+P' -> P
+
+P -> D P
+P -> S M1 P
+P -> null
+
+S -> S M1 S
+S -> id = E ;
+S -> L = E ;
+S -> if B then M1 S
+S -> if B then M1 S N3 else M1 S
+S -> while M1 B do { M1 S }
+S -> call id ( ELst ) ;
+
+D -> D D
+D -> proc id ; { N1 D S }
+D -> X id C ;
+D -> struct id N2 { D } ;
+
+X -> int
+X -> float
+X -> long
+X -> short
+X -> char
+X -> double
+X -> unsigned
+X -> bool
+
+C -> [ Num ] C
+C -> null
+
+Num -> dec
+Num -> oct
+Num -> hex
+Num -> const_int
+Num -> const_float
+Num -> e-notation
+
+E -> E Op E
+E -> - E
+E -> ( E )
+E -> id
+E -> L
+E -> Num
+E -> const_char
+E -> const_string
+
+Op -> +
+Op -> -
+Op -> *
+Op -> /
+Op -> %
+Op -> ^
+
+L -> id [ E ]
+L -> L [ E ]
+
+B -> B or M1 B
+B -> B and M1 B
+B -> not B
+B -> ( B )
+B -> E RelOp E
+B -> true
+B -> false
+
+RelOp -> <
+RelOp -> <=
+RelOp -> ==
+RelOp -> !=
+RelOp -> >
+RelOp -> >=
+
+ELst -> ELst , E
+ELst -> E
+
+N1 -> null
+
+N2 -> null
+
+N3 -> null
+
+M1 -> null

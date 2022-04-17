@@ -1,0 +1,39 @@
+0  : (*,1,8,t0)              t0 = 1 * 8
+1  : (*,1,1,t1)              t1 = 1 * 1
+2  : (+,t0,t1,t2)            t2 = t0 + t1
+3  : (=[],arr,t2,t3)         t3 = arr [ t2 ]
+4  : (=,t3,_,new_c)          new_c = t3
+5  : (+,val_f,100,t4)        t4 = val_f + 100
+6  : (=,t4,_,val_s)          val_s = t4
+7  : (*,1,8,t5)              t5 = 1 * 8
+8  : (*,1,1,t6)              t6 = 1 * 1
+9  : (+,t5,t6,t7)            t7 = t5 + t6
+10 : ([]=,helo,arr,t7)       arr [ t7 ] = helo
+11 : (*,1,8,t8)              t8 = 1 * 8
+12 : (*,0,1,t9)              t9 = 0 * 1
+13 : (+,t8,t9,t10)           t10 = t8 + t9
+14 : (=[],arr,t10,t11)       t11 = arr [ t10 ]
+15 : (=,t11,_,c)             c = t11   
+16 : (j>=,val_f,val_s,18)    if val_f >= val_s goto 18
+17 : (j,_,_,31)              goto 31   
+18 : (+,val_s,1,t12)         t12 = val_s + 1
+19 : (=,t12,_,val_s)         val_s = t12
+20 : (j==,val_s,0,22)        if val_s == 0 goto 22
+21 : (j,_,_,25)              goto 25   
+22 : (+,val_s,1,t13)         t13 = val_s + 1
+23 : (=,t13,_,val_s)         val_s = t13
+24 : (j,_,_,16)              goto 16   
+25 : (j==,val_f,val_s,27)    if val_f == val_s goto 27
+26 : (j,_,_,16)              goto 16   
+27 : (j==,val_f,0,16)        if val_f == 0 goto 16
+28 : (j,_,_,29)              goto 29   
+29 : (=,1,_,val_f)           val_f = 1 
+30 : (j,_,_,16)              goto 16   
+31 : (*,1,8,t14)             t14 = 1 * 8
+32 : (*,1,1,t15)             t15 = 1 * 1
+33 : (+,t14,t15,t16)         t16 = t14 + t15
+34 : (=[],arr,t16,t17)       t17 = arr [ t16 ]
+35 : (+,val_f,t17,t18)       t18 = val_f + t17
+36 : (param,_,_,t18)         param t18 
+37 : (param,_,_,100)         param 100 
+38 : (call,func,2,_)         call func , 2
